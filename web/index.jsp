@@ -2,6 +2,20 @@
 <html>
   <head>
     <title>$Title$</title>
+    <style>
+      a{
+        text-decoration: none;
+        color: black;
+        font-size: 18px;
+      }
+      h3{
+        width: 180px;
+        height: 38px;
+        margin: 200px auto;
+        text-align: center;
+        border-radius: 5px;
+      }
+    </style>
   </head>
   <body>
   <h3>
