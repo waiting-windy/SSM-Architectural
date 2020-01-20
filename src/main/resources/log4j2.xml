@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Configuration status="WARN" monitorInterval="600">
+
+    <Appenders>
+
+        <!--这个输出控制台的配置，这里输出除了warn和error级别的信息到System.out-->
+        <Console name="console_out_appender" target="SYSTEM_OUT">
+            <!-- 控制台只输出level及以上级别的信息(onMatch),其他的直接拒绝(onMismatch)
+                优先级，即DEBUG，INFO，WARN，ERROR，
+            -->
+            <ThresholdFilter level="ERROR" onMatch="DENY" onMismatch="ACCEPT"/>
+            <!-- 输出日志的格式 -->
+            <PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss} (%F:%L) %m%n"/>
+        </Console>
+    </Appenders>
+
+    <Loggers>
+        <!-- 配置日志的根节点 -->
+        <root level="trace">
+            <appender-ref ref="console_out_appender"/>
+        </root>
+
+        <!-- 第三方日志系统 -->
+        <logger name="org.springframework.core" level="info"/>
+        <logger name="org.springframework.beans" level="info"/>
+        <logger name="org.springframework.context" level="info"/>
+        <logger name="org.springframework.web" level="info"/>
+        <logger name="org.jboss.netty" level="warn"/>
+        <logger name="org.apache.http" level="warn"/>
+
+    </Loggers>
+
+</Configuration>
