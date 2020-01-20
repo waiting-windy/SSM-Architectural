@@ -11,7 +11,7 @@
     <context:component-scan base-package="com.microsoft.service"/>
 
     <!--2. 将所有的业务类注入到申请Spring-->
-    <bean id="bookService" class="com.microsoft.service.BookServiceImpl">
+    <bean id="bookServiceImpl" class="com.microsoft.service.BookServiceImpl">
         <property name="mapper" ref="bookMapper"/>
     </bean>
 
